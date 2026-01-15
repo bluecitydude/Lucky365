@@ -198,6 +198,7 @@ h1 {
     padding: 2rem;
     flex-grow: 1;
     width: 100%;
+    overflow: visible;
 }
 
 /* Team grid - responsive columns based on screen size */
@@ -206,6 +207,7 @@ h1 {
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
     perspective: 1000px;
+    overflow: visible;
 }
 
 /* Responsive Grid Breakpoints */
@@ -375,6 +377,7 @@ h1 {
     transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
     box-shadow: 0 8px 16px -2px rgba(0, 0, 0, 0.15), 0 4px 8px -2px rgba(0, 0, 0, 0.08);
     animation: fadeIn 0.6s ease-out backwards;
+    z-index: 1;
 }
 
 /* Hover effect - card shadow enhancement with subtle lift */
@@ -382,7 +385,7 @@ h1 {
     box-shadow: 0 25px 50px -10px rgba(30, 64, 175, 0.4), 0 15px 20px -5px rgba(13, 148, 136, 0.2);
     border-color: rgba(124, 58, 237, 0.5);
     background: linear-gradient(145deg, rgba(15, 35, 70, 0.95), rgba(10, 25, 50, 1));
-    transform: translateY(-4px);
+    transform: translateY(-8px) scale(1.08);
 }
 
 /* Top border accent line on hover */
@@ -391,15 +394,18 @@ h1 {
     position: absolute;
     top: 0;
     left: 0;
+    right: 0;
     width: 100%;
-    height: 4px;
-    background: linear-gradient(90deg, var(--primary-light), var(--secondary-light));
+    height: 0;
+    background: transparent;
     opacity: 0;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.4s ease;
+    border-radius: 24px 24px 0 0;
+    display: none;
 }
 
 .card:hover::before {
-    opacity: 1;
+    opacity: 0;
 }
 
 /* Main card display - shows project icon, title, and description */
@@ -410,10 +416,17 @@ h1 {
     align-items: center;
     justify-content: flex-start;
     padding: 1.5rem 1.5rem 1rem 1.5rem;
-    transition: all 0.4s ease;
+    transition: opacity 0.4s ease;
     text-align: center;
     overflow-y: auto;
     gap: 0.5rem;
+    opacity: 1;
+    visibility: visible;
+}
+
+.card:hover .card-display {
+    opacity: 0;
+    visibility: hidden;
 }
 
 /* Scrollbar styling for card descriptions */
@@ -482,26 +495,32 @@ h1 {
 /* Tooltip - appears on hover with team information */
 .tooltip-content {
     position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%) translateY(120%);
-    min-width: 280px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
     background: rgba(15, 30, 60, 0.98);
     border: 1px solid rgba(59, 130, 246, 0.4);
     border-radius: 12px;
     padding: 1.5rem;
     opacity: 0;
+    visibility: hidden;
     pointer-events: none;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    z-index: 1000;
+    transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+    z-index: 100;
     box-shadow: 0 10px 40px rgba(30, 64, 175, 0.3);
     white-space: normal;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 /* Show tooltip on card hover */
 .card:hover .tooltip-content {
     opacity: 1;
-    transform: translateX(-50%) translateY(-20px);
+    visibility: visible;
     pointer-events: auto;
 }
 
@@ -516,7 +535,8 @@ h1 {
     height: 0;
     border-left: 8px solid transparent;
     border-right: 8px solid transparent;
-    border-bottom: 8px solid rgba(59, 130, 246, 0.4);
+    border-bottom: 8px solid rgba(15, 30, 60, 0.98);
+    display: none;
 }
 
 /* ========================================
