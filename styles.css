@@ -125,6 +125,18 @@ body::after {
     gap: 12px;
 }
 
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.header-logo-right {
+    height: 48px;
+    border-radius: 8px;
+    object-fit: contain;
+}
+
 .brand-text {
     font-size: 1.5rem;
     font-weight: 800;
@@ -141,6 +153,13 @@ body::after {
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
+}
+
+.footer-contact {
+    margin-top: 0.75rem;
+    font-size: 0.85rem;
+    color: var(--text-dim);
+    line-height: 1.8;
 }
 
 /* Theme Toggle Switch */
@@ -1079,7 +1098,9 @@ body {
         margin-top: 1.5rem;
         padding-top: 1.5rem;
         border-top: 1px solid var(--border);
-        border: none;
+        border-left: none;
+        border-right: none;
+        border-bottom: none;
         background: transparent;
         inset: unset;
     }
@@ -1099,6 +1120,10 @@ body {
     .container {
         padding: 1rem 1.5rem;
     }
+
+    .header-logo-right {
+        height: 40px;
+    }
 }
 
 @media (max-width: 768px) {
@@ -1116,11 +1141,23 @@ body {
     }
 
     .header-logo {
-        height: 40px;
+        height: 36px;
+    }
+
+    .header-logo-right {
+        height: 36px;
     }
 
     .brand-text {
-        font-size: 1.25rem;
+        font-size: 1.1rem;
+    }
+
+    .header-right {
+        gap: 10px;
+    }
+
+    .logo-wrapper {
+        gap: 8px;
     }
 
     .card {
@@ -1170,9 +1207,47 @@ body {
         padding: 2.5rem 1rem;
         margin-top: 2rem;
     }
+
+    .theme-toggle {
+        width: 50px;
+        height: 26px;
+    }
+
+    .toggle-shifter {
+        width: 20px;
+        height: 20px;
+    }
+
+    [data-theme="dark"] .toggle-shifter {
+        left: calc(100% - 22px);
+    }
 }
 
 @media (max-width: 480px) {
+    .header-content {
+        padding: 0.5rem 0.75rem;
+    }
+
+    .header-logo {
+        height: 30px;
+    }
+
+    .header-logo-right {
+        height: 30px;
+    }
+
+    .brand-text {
+        font-size: 0.95rem;
+    }
+
+    .header-right {
+        gap: 8px;
+    }
+
+    .logo-wrapper {
+        gap: 6px;
+    }
+
     .container {
         padding: 0.75rem;
     }
@@ -1209,6 +1284,36 @@ body {
 
     .members-list {
         font-size: 0.85rem;
+    }
+
+    .theme-toggle {
+        width: 44px;
+        height: 24px;
+    }
+
+    .toggle-icon {
+        font-size: 10px;
+    }
+
+    .toggle-shifter {
+        width: 18px;
+        height: 18px;
+    }
+
+    [data-theme="dark"] .toggle-shifter {
+        left: calc(100% - 20px);
+    }
+
+    .glitch {
+        font-size: clamp(1.3rem, 5vw, 2rem);
+    }
+
+    .banner p {
+        font-size: 0.8rem;
+    }
+
+    .footer-contact {
+        font-size: 0.8rem;
     }
 }
 

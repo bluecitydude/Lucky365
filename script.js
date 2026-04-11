@@ -1,11 +1,11 @@
-// Hackathon teams data with project information and tech-styled SVG icons
+// Hackathon teams data with project information and emoji icons
 const hackathonTeams = [
     {
         teamName: "ResTecSol",
         members: "Tejendra Purohit, Jasleen Kaur Handa, Shahid Ansari, Tushar Sharma",
         projectName: "Talent Bloom",
         description: "Find your talent and improve it in simple ways with AI-powered guidance.",
-        icon: `<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"></path><path d="M2 17l10 5 10-5"></path><path d="M2 12l10 5 10-5"></path></svg>`,
+        icon: "🌱",
         link: "https://restecsol-talent-bloom.netlify.app"
     },
     {
@@ -13,7 +13,7 @@ const hackathonTeams = [
         members: "Nitin Daswani, Khush Soni, Jatin, Hinal Parmar",
         projectName: "Workshop Management System",
         description: "Smart platform for managing workshops, registrations and communication.",
-        icon: `<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line><path d="M8 14h.01"></path><path d="M12 14h.01"></path><path d="M16 14h.01"></path><path d="M8 18h.01"></path><path d="M12 18h.01"></path><path d="M16 18h.01"></path></svg>`,
+        icon: "🗓️",
         link: "https://4qbits-wms.vercel.app"
     },
     {
@@ -21,7 +21,7 @@ const hackathonTeams = [
         members: "Neelima Maheshwari, Krishna Khubchandani, Aryan Soni, Nishant Rupani",
         projectName: "Intern Match",
         description: "AI-powered engine that matches students with ideal internships & placements.",
-        icon: `<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M22 12h-4"></path><path d="M6 12H2"></path><path d="M12 6V2"></path><path d="M12 22v-4"></path></svg>`,
+        icon: "🎯",
         link: "https://the-tech-titans-intern-match.netlify.app"
     },
     {
@@ -29,7 +29,7 @@ const hackathonTeams = [
         members: "Varun Gehlot (Leader)",
         projectName: "AI Study Planner",
         description: "Smart AI-powered study planner that optimizes your learning schedule for maximum efficiency.",
-        icon: `<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>`,
+        icon: "📚",
         link: "https://devdominators-ai-study-planner.netlify.app"
     },
     {
@@ -37,8 +37,16 @@ const hackathonTeams = [
         members: "Yagya Kansara (Leader), Nishant Vaishnav, Ashish Rankawat, Sahil Jangid",
         projectName: "Habit Building AI Coach",
         description: "AI-powered personal coach for building healthy habits and boosting daily productivity.",
-        icon: `<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>`,
+        icon: "💪",
         link: "https://routine-risers-habit-builder.netlify.app/"
+    },
+    {
+        teamName: "AI Marauders",
+        members: "Garvita Goyal, Arbaaz Khan, Dimpal Sharma, Palak Dharival",
+        projectName: "ResultPro",
+        description: "Comprehensive result management system for managing academic results, transcripts, and student performance tracking.",
+        icon: "📊",
+        link: "https://result-management-ai-marauders.netlify.app/"
     }
 ];
 
@@ -229,10 +237,10 @@ function initTypingEffect() {
     if (!typingText) return;
 
     const phrases = [
-        "Initializing platform...",
-        "System: Optimal",
-        "Mode: Professional",
-        "Ready to innovate."
+        "Loading student solutions...",
+        "Built by Lucky Institute students",
+        "Innovation in action",
+        "Explore. Learn. Build."
     ];
 
     let phraseIndex = 0;
